@@ -1,0 +1,405 @@
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Data Tabular</title>
+	<link
+		rel="stylesheet"
+		href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css"
+	/>
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	/>
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+	/>
+	<link
+		rel="stylesheet"
+		href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css"
+	/>
+	<link
+		rel="stylesheet"
+		href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css"
+	/>
+</head>
+<body>
+	<header>
+		<nav
+			class="
+				navbar
+				fixed-top
+				navbar-expand-lg navbar-dark navbar-theme
+			"
+			id="navbar-main"
+			style="background-color: #161616"
+		>
+			<div class="container">
+				<a
+					class="navbar-brand text-uppercase fw-bold"
+					href="index.html"
+					>SIG Bantuan Pangan</a
+				>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item ms-5">
+							<a class="nav-link" href="index.html"
+								>Beranda</a
+							>
+						</li>
+						<li class="nav-item ms-5 dropdown">
+							<a
+								class="nav-link dropdown-toggle active"
+								href="#"
+								id="navbarDropdown"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+								aria-current="page"
+								>Data</a
+							>
+							<ul
+								class="dropdown-menu"
+								aria-labelledby="navbarDropdown"
+							>
+								<li>
+									<a
+										class="dropdown-item"
+										href="tematik.html"
+										>Tematik</a
+									>
+								</li>
+								<li>
+									<a
+										class="dropdown-item"
+										href="tabular.html"
+										>Tabular</a
+									>
+								</li>
+							</ul>
+						</li>
+						<li class="nav-item ms-5">
+							<a class="nav-link" href="about.html"
+								>Tentang</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<div class="content-container">
+			<h2
+				class="text-center fw-bolder"
+				style="margin-top: 80px; padding: 0 20px"
+			>
+				Data Tabular Bantuan Sosial Pangan Kabupaten Brebes Tahun
+				2019
+			</h2>
+			<div class="chart-content mt-3">
+				<article class="card">
+					<section>
+						<canvas id="penerima"></canvas>
+					</section>
+				</article>
+
+				<article class="card">
+					<section>
+						<canvas id="anggaran"></canvas>
+					</section>
+				</article>
+
+				<article class="card">
+					<section>
+						<canvas id="ewarong"></canvas>
+					</section>
+				</article>
+
+				<article class="card">
+					<section>
+						<canvas id="ewarong-pie"></canvas>
+					</section>
+				</article>
+			</div>
+
+			<article class="content-full card">
+				<section>
+					<div class="card-header p-3">
+						<h4 class="fw-bolder text-center">
+							Tabel Penerima Bantuan Pangan dan Anggaran
+							Bantuan Sosial Pangan
+						</h4>
+					</div>
+					<div class="p-4">
+						<table id="tabel-sumber-data" class="display">
+							<thead>
+								<tr>
+									<th>No.</th>
+									<th>Kecamatan</th>
+									<th>Jumlah Penerima Bantuan (KPM)</th>
+									<th>Jumlah Anggaran (Rp.)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Salem</td>
+									<td>5718</td>
+									<td>682.980.000</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Bantar Kawung</td>
+									<td>11760</td>
+									<td>884.950.000</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Bumiayu</td>
+									<td>8045</td>
+									<td>884.950.000</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Paguyangan</td>
+									<td>11468</td>
+									<td>1.261.480.000</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>Sirampog</td>
+									<td>6661</td>
+									<td>732.710.000</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>Tonjong</td>
+									<td>7556</td>
+									<td>831.160.000</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>Larangan</td>
+									<td>13258</td>
+									<td>1.458.380.000</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>Ketanggungan</td>
+									<td>15183</td>
+									<td>1.670.130.000</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>Losari</td>
+									<td>12791</td>
+									<td>1.406.010.000</td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>Tanjung</td>
+									<td>10526</td>
+									<td>1.157.860.000</td>
+								</tr>
+								<tr>
+									<td>11</td>
+									<td>Kersana</td>
+									<td>5146</td>
+									<td>566.060.000</td>
+								</tr>
+								<tr>
+									<td>12</td>
+									<td>Bulakamba</td>
+									<td>16502</td>
+									<td>1.815.200.000</td>
+								</tr>
+								<tr>
+									<td>13</td>
+									<td>Wanasari</td>
+									<td>5718</td>
+									<td>1.648.460.000</td>
+								</tr>
+								<tr>
+									<td>14</td>
+									<td>Jatibarang</td>
+									<td>6010</td>
+									<td>661.100.000</td>
+								</tr>
+								<tr>
+									<td>15</td>
+									<td>Songgom</td>
+									<td>6785</td>
+									<td>746.350.000</td>
+								</tr>
+								<tr>
+									<td>16</td>
+									<td>Brebes</td>
+									<td>10815</td>
+									<td>1.189.650.000</td>
+								</tr>
+								<tr>
+									<td>17</td>
+									<td>Banjarharjo</td>
+									<td>10880</td>
+									<td>1.196.800.000</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th>No.</th>
+									<th>Kecamatan</th>
+									<th>Jumlah Penerima Bantuan (KPM)</th>
+									<th>Jumlah Anggaran (Rp.)</th>
+								</tr>
+							</tfoot>
+						</table>
+						<p style="font-size: 12px">
+							<em
+								>*Sumber:
+								<a
+									target="_blank"
+									href="https://brebeskab.bps.go.id/publication/2020/04/27/d3f4377eb63e5edd93cb6217/kabupaten-brebes-dalam-angka-2020.html"
+									>Kabupaten Brebes Dalam Angka 2020.</a
+								>
+								Halaman 189</em
+							>
+						</p>
+					</div>
+				</section>
+			</article>
+
+			<article class="content-full card">
+				<section>
+					<div class="card-header p-3">
+						<h4 class="fw-bolder text-center">
+							Tabel E - Warong / Tempat Pengambilan Bantuan
+							Pangan
+						</h4>
+					</div>
+					<div class="p-4">
+						<table id="tabel-ewarong" class="display">
+							<thead>
+								<tr>
+									<th>No.</th>
+									<th>Nama E - Warong</th>
+									<th>Alamat</th>
+									<th>Kecamatan</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>E - warung</td>
+									<td>
+										Gandasuli, Kec. Brebes, Kabupaten
+										Brebes, Jawa Tengah 52215
+									</td>
+									<td>Brebes</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>
+										E - Warong Berkah Makmur Sigentong
+									</td>
+									<td>
+										Jl. Sigentong Tengah, Pule,
+										Sigentong, Kec. Wanasari, Kabupaten
+										Brebes, Jawa Tengah 52252
+									</td>
+									<td>Wanasari</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>E - Warong PKH Mamase</td>
+									<td>
+										Bonjot, RT.05/RW.04, Bonjot,
+										Kalibuntu, Kec. Losari, Kabupaten
+										Brebes, Jawa Tengah 52255
+									</td>
+									<td>Losari</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>E - Warong PKH</td>
+									<td>
+										Jl. Penjalinbanyu, Siandong, Kec.
+										Larangan, Kabupaten Brebes, Jawa
+										Tengah 52262
+									</td>
+									<td>Larangan</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>
+										E - Warong PKH Mugi Barokah Bangsri
+									</td>
+									<td>
+										Jl. Raya Bangsri, RT.05/RW.02,
+										Bangsri Utara, Bangsri, Kec.
+										Bulakamba, Kabupaten Brebes, Jawa
+										Tengah 52253
+									</td>
+									<td>Bulakamba</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>E - Warong</td>
+									<td>
+										Jl. Semboja No.13, RT.004/RW.001,
+										Bangsri Utara, Bangsri, Kec.
+										Bulakamba, Kabupaten Brebes, Jawa
+										Tengah 52253
+									</td>
+									<td>Bulakamba</td>
+								</tr>
+							</tbody>
+						</table>
+						<p style="font-size: 12px">
+							<em
+								>*Sumber:
+								<a
+									target="_blank"
+									href="https://www.google.com/maps?q=e+warong+brebes&safe=strict&client=firefox-b-d&sxsrf=ALeKk03aIoFbneWbwkbiIqtecIkIxwjygw:1624610312256&gs_lcp=Cgdnd3Mtd2l6EAMYADIECCMQJzoFCAAQsAM6AggAOgYIABAWEB46CAgAEBYQChAeOgIIJkoECEEYAVDbjAZYpJgGYL6eBmgBcAB4AIABlAWIAesQkgELMC4xLjQuMS4wLjGYAQCgAQGqAQdnd3Mtd2l6yAEBwAEB&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiw56u2sbLxAhWKXCsKHeZ5AS8Q_AUoAnoECAEQBA"
+									>Google Maps</a
+								></em
+							>
+						</p>
+					</div>
+				</section>
+			</article>
+		</div>
+	</main>
+
+	<footer>
+		<p>&copy; 2021 SIG Kebutuhan Pangan</p>
+		<p>
+			created with ❤️ by
+			<a target="_blank" href="https://www.github.com/notokrs"
+				>Rusnoto</a
+			>
+		</p>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js"></script>
+	<script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/tabular.js"></script>
+</body>
+</html>
